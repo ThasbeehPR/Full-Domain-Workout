@@ -1,0 +1,49 @@
+delete database
+--------------
+1.  use database (call the database)
+2.  db.dropDatabase()
+    db.collectionName.drop() //to delete collection 
+
+
+sort and view name only
+-----------------------
+db.product.aggregate([{$match:{name:{$regex:'^s',$options:'i'}}},{$sort:{name:1}},{$project:{name:1,_id:0}} ])
+
+
+array insertion
+---------------
+db.product.updateOne({name:'samsung'},{$set:{sim:[]}})
+
+array
+-----
+db.product.updateOne({name:'samsung'},{$set:{project:[]}})
+
+{$push:{project:$each:['p2','p3']}}
+
+{$pull:{project:'p3'}}
+
+{$set:{contact:{email:[],phone;[]}}}
+
+{$push:{'contact.phone':{$each:[bdvsdvdsnv sv ]}}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
